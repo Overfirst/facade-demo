@@ -1,0 +1,35 @@
+<div class="posts">
+  <h1>{{ !isLoading ? 'Posts Page' : 'Loading...' }}</h1>
+
+  <div class="posts-post" *ngFor="let post of posts">
+    <ng-container *ngIf="post.user">
+      <div class="posts-post-content">
+        <h2>{{ post.title | titlecase }}</h2>
+        <div>{{ post.body | titlecase }}</div>
+      </div>
+
+      <div class="posts-post-user">
+        <div>
+          <b>Author: </b>
+          <span>{{ post.user.username }}</span>
+        </div>
+
+        <div>
+          <b>Email: </b>
+          <span>{{ post.user.email }}</span>
+        </div>
+
+        <div>
+          <b>Website: </b>
+          <span>{{ post.user.website }}</span>
+        </div>
+
+        <div>
+          <b>Phone: </b>
+          <span>{{ post.user.phone }}</span>
+        </div>
+
+      </div>
+    </ng-container>
+  </div>
+</div>
